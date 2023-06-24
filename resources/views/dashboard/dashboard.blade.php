@@ -53,6 +53,46 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="card dash-widget">
+                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-cubes"></i></span>
+                            <div class="dash-widget-info">
+                                <h3>112</h3> <span>Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="card dash-widget">
+                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-usd"></i></span>
+                            <div class="dash-widget-info">
+                                <h3>44</h3> <span>Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="card dash-widget">
+                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-diamond"></i></span>
+                            <div class="dash-widget-info">
+                                <h3>37</h3> <span>Tasks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="card dash-widget">
+                        <div class="card-body"> <span class="dash-widget-icon"><i class="fa fa-user"></i></span>
+                            <div class="dash-widget-info">
+                                <h3>218</h3> <span>Employees</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
@@ -405,7 +445,7 @@
                                                         </a>
                                                         <a class="dropdown-item" href="javascript:void(0)">
                                                             <i class="fa fa-trash-o m-r-5"></i> Delete
-                                                        </a> 
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </td>
@@ -534,7 +574,7 @@
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a class="dropdown-item" href="#">
                                                             <i class="fa fa-dot-circle-o text-success"></i> Active
-                                                        </a> 
+                                                        </a>
                                                         <a class="dropdown-item" href="#">
                                                             <i class="fa fa-dot-circle-o text-danger"></i> Inactive
                                                         </a>
@@ -582,7 +622,7 @@
                                                 <h2>
                                                     <a href="project-view.html">Office Management</a>
                                                 </h2>
-                                                <small class="block text-ellipsis">   
+                                                <small class="block text-ellipsis">
                                                     <span>1</span> <span class="text-muted">open tasks, </span>
                                                     <span>9</span> <span class="text-muted">tasks completed</span>
                                                 </small>
@@ -610,7 +650,7 @@
                                             <td>
                                                 <h2>
                                                     <a href="project-view.html">Project Management</a>
-                                                </h2> 
+                                                </h2>
                                                 <small class="block text-ellipsis">
                                                     <span>2</span> <span class="text-muted">open tasks, </span>
                                                     <span>5</span> <span class="text-muted">tasks completed</span>
@@ -702,7 +742,7 @@
                                                     <span>7</span> <span class="text-muted">open tasks, </span>
                                                     <span>14</span> <span class="text-muted">tasks completed</span>
                                                 </small>
-                                            
+
                                             </td>
                                             <td>
                                                 <div class="progress progress-xs progress-striped">

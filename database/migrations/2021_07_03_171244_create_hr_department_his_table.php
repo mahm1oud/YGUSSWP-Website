@@ -13,16 +13,16 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
-            $table->id();
-            $table->string('department')->nullable();
+        Schema::create('company_department_his', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('company_num')->nullable()->index();
+            $table->integer('employee_num')->nullable()->index();
+            $table->string('from_dt')->nullable();
+            $table->string('to_dt')->nullable();
+            $table->boolean('active')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
         });
-        DB::table('departments')->insert([
-            ['department' => 'Web Department'],
-            ['department' => 'IT Management'],
-            ['department' => 'Marketing'],
-        ]);
     }
 
     /**

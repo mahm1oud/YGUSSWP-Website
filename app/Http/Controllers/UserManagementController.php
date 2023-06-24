@@ -33,7 +33,7 @@ class UserManagementController extends Controller
         } else {
             return redirect()->route('home');
         }
-        
+
     }
 
     /** get list data and search */
@@ -95,9 +95,9 @@ class UserManagementController extends Controller
             } elseif ($record->role_name == 'Normal User') {
                 $role_name = '<span class="badge bg-inverse-info role_name">'.$record->role_name.'</span>';
             } elseif ($record->role_name == 'Client') {
-                $role_name = '<span class="badge bg-inverse-success role_name">'.$record->role_name.'</span>'; 
+                $role_name = '<span class="badge bg-inverse-success role_name">'.$record->role_name.'</span>';
             } elseif ($record->role_name == 'Employee') {
-                $role_name = '<span class="badge bg-inverse-dark role_name">'.$record->role_name.'</span>'; 
+                $role_name = '<span class="badge bg-inverse-dark role_name">'.$record->role_name.'</span>';
             } else {
                 $role_name = 'NULL'; /** null role name */
             }
@@ -156,7 +156,7 @@ class UserManagementController extends Controller
                 "role_name"    => $role_name,
                 "status"       => $status,
                 "department"   => '<span class="department">'.$record->department.'</span>',
-                "action"       => 
+                "action"       =>
                 '
                 <td>
                     <div class="dropdown dropdown-action">
@@ -201,7 +201,7 @@ class UserManagementController extends Controller
 
     /** profile user */
     public function profile()
-    {   
+    {
         $profile = Session::get('user_id'); // get user_id session
         $userInformation = PersonalInformation::where('user_id',$profile)->first(); // user information
         $user = DB::table('users')->get();
@@ -224,7 +224,7 @@ class UserManagementController extends Controller
             } else {
                 $information = ProfileInformation::all();
                 return view('usermanagement.profile_user',compact('information','user','userInformation','emergencyContact'));
-            } 
+            }
         }
     }
 
@@ -257,7 +257,7 @@ class UserManagementController extends Controller
                     'avatar' => $image_name,
                 ];
                 User::where('user_id',$request->user_id)->update($update);
-            } 
+            }
 
             $information = ProfileInformation::updateOrCreate(['user_id' => $request->user_id]);
             $information->name         = $request->name;
@@ -274,7 +274,7 @@ class UserManagementController extends Controller
             $information->designation  = $request->designation;
             $information->reports_to   = $request->reports_to;
             $information->save();
-            
+
             DB::commit();
             Toastr::success('Profile Information successfully :)','Success');
             return redirect()->back();
@@ -284,7 +284,7 @@ class UserManagementController extends Controller
             return redirect()->back();
         }
     }
-   
+
     /** save new user */
     public function addNewUserSave(Request $request)
     {
@@ -305,7 +305,7 @@ class UserManagementController extends Controller
             $dt       = Carbon::now();
             $todayDate = $dt->toDayDateTimeString();
 
-            $image = time().'.'.$request->image->extension();  
+            $image = time().'.'.$request->image->extension();
             $request->image->move(public_path('assets/images'), $image);
 
             $user = new User;
@@ -329,7 +329,7 @@ class UserManagementController extends Controller
             return redirect()->back();
         }
     }
-    
+
     /** update record */
     public function update(Request $request)
     {
@@ -362,7 +362,7 @@ class UserManagementController extends Controller
                     $image->move(public_path('/assets/images/'), $image_name);
                 }
             }
-            
+
             $update = [
 
                 'user_id'       => $user_id,
@@ -446,7 +446,7 @@ class UserManagementController extends Controller
     {
         return view('settings.changepassword');
     }
-    
+
     /** change password in db */
     public function changePasswordDB(Request $request)
     {
@@ -478,7 +478,7 @@ class UserManagementController extends Controller
         ]);
 
         try {
-            
+
             /** save or update to databases user_emergency_contacts table */
             $saveRecord = UserEmergencyContact::updateOrCreate(['user_id' => $request->user_id]);
             $saveRecord->name_primary           = $request->name_primary;
@@ -490,7 +490,7 @@ class UserManagementController extends Controller
             $saveRecord->phone_secondary        = $request->phone_secondary;
             $saveRecord->phone_2_secondary      = $request->phone_2_secondary;
             $saveRecord->save();
-            
+
             DB::commit();
             Toastr::success('Add Emergency Contact successfully :)','Success');
             return redirect()->back();
@@ -500,6 +500,14 @@ class UserManagementController extends Controller
             return redirect()->back();
         }
     }
+
+
+     /** view change password */
+     public function userProfileChat()
+     {
+         return view('apps_system.chat.my_chat_messages');
+     }
+
 }
 
 

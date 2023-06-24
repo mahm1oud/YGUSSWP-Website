@@ -10,15 +10,15 @@ use App\Models\department;
 use App\Models\User;
 use App\Models\module_permission;
 
-class EmployeeController extends Controller
+class CompanyController extends Controller
 {
-    /** all employee card view */
-    public function cardAllEmployee(Request $request)
+    /** all Company card view */
+    public function cardAllCompany(Request $request)
     {
         $users = DB::table('users')
                     ->join('employees','users.user_id','employees.employee_id')
                     ->select('users.*','employees.birth_date', 'employees.gender','employees.company')
-                    ->get(); 
+                    ->get();
         $userList = DB::table('users')->get();
         $permission_lists = DB::table('permission_lists')->get();
         return view('employees.allemployeecard',compact('users','userList','permission_lists'));
@@ -63,7 +63,7 @@ class EmployeeController extends Controller
                 $employee->employee_id  = $request->employee_id;
                 $employee->company      = $request->company;
                 $employee->save();
-    
+
                 for($i=0;$i<count($request->id_count);$i++)
                 {
                     $module_permissions = [
@@ -79,7 +79,7 @@ class EmployeeController extends Controller
                     ];
                     DB::table('module_permissions')->insert($module_permissions);
                 }
-                
+
                 DB::commit();
                 Toastr::success('Add new employee successfully :)','Success');
                 return redirect()->route('all/employee/card');
@@ -94,7 +94,7 @@ class EmployeeController extends Controller
             return redirect()->back();
         }
     }
-    
+
     /** view edit record */
     public function viewRecord($employee_id)
     {
@@ -148,7 +148,7 @@ class EmployeeController extends Controller
 
             User::where('id',$request->id)->update($updateUser);
             Employee::where('id',$request->id)->update($updateEmployee);
-        
+
             DB::commit();
             Toastr::success('updated record successfully :)','Success');
             return redirect()->route('all/employee/card');
@@ -257,7 +257,7 @@ class EmployeeController extends Controller
     {
         $users = DB::table('users')
                     ->join('employees','users.user_id','employees.employee_id')
-                    ->select('users.*','employees.birth_date','employees.gender','employees.company')->get(); 
+                    ->select('users.*','employees.birth_date','employees.gender','employees.company')->get();
         $permission_lists = DB::table('permission_lists')->get();
         $userList         = DB::table('users')->get();
 
@@ -329,7 +329,7 @@ class EmployeeController extends Controller
     /** employee profile with all controller user */
     public function profileEmployee($user_id)
     {
-        $user = DB::table('users') 
+        $user = DB::table('users')
                 ->leftJoin('personal_information as pi','pi.user_id','users.user_id')
                 ->leftJoin('profile_information as pr','pr.user_id','users.user_id')
                 ->leftJoin('user_emergency_contacts as ue','ue.user_id','users.user_id')
@@ -378,7 +378,7 @@ class EmployeeController extends Controller
                 $department = new department;
                 $department->department = $request->department;
                 $department->save();
-    
+
                 DB::commit();
                 Toastr::success('Add new department successfully :)','Success');
                 return redirect()->back();
@@ -405,7 +405,7 @@ class EmployeeController extends Controller
                 'department'=>$request->department,
             ];
             department::where('id',$request->id)->update($department);
-        
+
             DB::commit();
             Toastr::success('updated record successfully :)','Success');
             return redirect()->back();
@@ -417,13 +417,13 @@ class EmployeeController extends Controller
     }
 
     /** delete record department */
-    public function deleteRecordDepartment(Request $request) 
+    public function deleteRecordDepartment(Request $request)
     {
         try {
             department::destroy($request->id);
             Toastr::success('Department deleted successfully :)','Success');
             return redirect()->back();
-        
+
         } catch(\Exception $e) {
             DB::rollback();
             Toastr::error('Department delete fail :)','Error');

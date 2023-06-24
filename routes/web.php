@@ -122,6 +122,7 @@ Route::controller(UserManagementController::class)->group(function () {
     Route::get('activity/login/logout', 'activityLogInLogOut')->middleware('auth')->name('activity/login/logout');
     Route::get('change/password', 'changePasswordView')->middleware('auth')->name('change/password');
     Route::post('change/password/db', 'changePasswordDB')->name('change/password/db');
+    Route::get('user/profile/chat', 'userProfileChat')->name('user/profile/chat');
 
     Route::post('user/profile/emergency/contact/save', 'emergencyContactSaveOrUpdate')->name('user/profile/emergency/contact/save'); /** save or update emergency contact */
     Route::get('get-users-data', 'getUsersData')->name('get-users-data'); /** get all data users */
@@ -201,7 +202,7 @@ Route::controller(EmployeeController::class)->group(function () {
 
 // ------------------------- profile employee --------------------------//
 Route::controller(EmployeeController::class)->group(function () {
-    Route::get('employee/profile/{user_id}', 'profileEmployee')->middleware('auth');
+    Route::get('employee/profile/{user_id}', 'profileEmployee')->middleware('auth')->name('profileEmployee');;
 });
 
 // --------------------------- form holiday ---------------------------//

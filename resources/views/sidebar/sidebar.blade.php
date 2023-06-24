@@ -27,9 +27,11 @@
                             <li><a class="{{set_active(['search/user/list','userManagement'])}}" href="{{ route('userManagement') }}">All User</a></li>
                             <li><a class="{{set_active(['activity/log'])}}" href="{{ route('activity/log') }}">Activity Log</a></li>
                             <li><a class="{{set_active(['activity/login/logout'])}}" href="{{ route('activity/login/logout') }}">Activity User</a></li>
+                            <li><a class="{{set_active(['user/profile/chat'])}}" href="{{ route('user/profile/chat') }}">User Chat</a></li>
                         </ul>
                     </li>
                 @endif
+
                 <li class="menu-title"> <span>الموارد البشرية</span> </li>
                 <li class="{{set_active(['all/employee/list','all/employee/list','all/employee/card','form/holidays/new','form/leaves/new',
                     'form/leavesemployee/new','form/leavesettings/page','attendance/page',

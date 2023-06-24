@@ -1,5 +1,157 @@
 <?php
 return [
+    //System settings
+    //financial_year
+    "financial_year" => "السنة المالية",
+    "financial_years" => "السنوات المالية",
+    "period_number" => "عدد الفترات",
+    "periodt_type" => "نوع الفترة",
+    "from_month" => "من شهر",
+    "from_year" => "من سنة",
+    "to_month" => "الى شهر",
+    "to_year" => "الى سنة",
+    "periods_of_year" => "فترات السنة",
+    "numbering" => "الترقيم",
+    "period_number" => "",
+    "from_date" => "",
+    "to_date" => "",
+    "month_name" => "",
+    "month_foreign_name" => "",
+
+    //Create currencies
+    //"numbering" => "",
+    "currency number" => "رقم العملة",
+    "Currency name" => "اسم العملة",
+    "foreign name" => "الاسم الاجنبي",
+    "currency symbol" => "رمز الفكة",
+    "change_name" => "الفكة",
+    "change_foreign_name" => "اسم الفكة الاجنبي",
+    "foreign currency" => "عملة اجنبية؟",
+    "local currency" => "عملة محلية؟",
+    "Exchange rate" => "سعر التحويل",
+    "highest conversion rate" => "اعلى سعر تحويل",
+    "Lowest conversion rate" => "ادنى سعر تحويل",
+    "number of fraction digits" => "عدد خانات الكسور",
+
+    //Countries
+   // "numbering" => "",
+    "countries" => "الدول",
+    "countries" => "الدول",
+    "country" => "الدولة",
+    "country_number" => "رقم الدولة",
+    "country_name" => "اسم الدولة",
+    "country_foreign_name" => "",
+    "country_short_name" => "الاسم المختصر",
+    "local_currency" => "العملة المحلية",
+    //Governorate
+    "governorate" => "المحافظة",
+    //"numbering" => "",
+    "gov_No" => "رقم المحافظة",
+    //"country_number" => "رقم الدولة",
+    "gov_name" => "",
+    "gov_foreign_name" => "",
+    //Directorate
+    "directorate" => "المديرية",
+    "directorate_numbering" => "",
+    "directorate_No" => "",
+    //"gov_No" => "رقم المحافظة",
+    "Directorate name" => "",
+    "foreign name" => "",
+//areas
+    "areas" => "المنطقة",
+    "area_numbering" => "",
+    "area_number" => "",
+    "Area name" => "",
+    "foreign name" => "",
+    //Branch groups
+    "branch_groups" => "",
+    "branch_group_number" => "",
+    "branch_group_name" => "",
+    "branch_group_foreign_name" => "",
+    //company
+    "company" => "الشركة",
+    "company_num" => "رقم الشركة",
+    "company_name" => "اسم الشركة",
+    "company_foreign_name" => "الاسم الاجنبي",
+    "company_short_name" => "الاسم المختصر",
+    "company_phone" => "ملاحظات",
+    "company_phone1" => "ملاحظات",
+    "company_fax" => "ملاحظات",
+    "company_street" => "ملاحظات",
+    "company_city" => "ملاحظات",
+    "company_mail" => "ملاحظات",
+    "company_logo" => "ملاحظات",
+    "company_tax" => "ملاحظات",
+    "company_currency" => "ملاحظات",
+    "company_subcurrency" => "ملاحظات",
+    "company_comments" => "ملاحظات",
+    "company_group_number" => "المجموعة",
+    "company_country_number" => "الدولة",
+    //branches
+    "branches" => "الفروع",
+    "company_branch_num" => "",
+    "branch_number" => "",
+    "branch_year" => "",
+    "branch_company_name" => "",
+    "branch_company_foreign_name" => "",
+    "branch_name" => "",
+    "branch_foreign_name" => "",
+    "branch_group_number" => "",
+    "branch_logo" => "",
+    "branch_main" => "",
+    "branch_country_number" => "",
+    "branch_gov_num" => "",
+    "branch_directorate_num" => "",
+    "branch_area_number" => "",
+    "branch_address" => "",
+    "branch_Arabic_letterhead1" => "",
+    "branch_Arabic_letterhead2" => "",
+    "branch_Arabic_letterhead3" => "",
+    "branch_foreign_letterhead1" => "",
+    "branch_foreign_letterhead2" => "",
+    "branch_foreign_letterhead3" => "",
+    "branch_website" => "",
+    "branch_Social_security_num" => "رقم الضمان الاجتماعي",
+    "branch_Warranty_agency_num" => "رقم وكالة الضمان",
+    "branch_name_guarantee_agency" => "اسم وكالة الضمان",
+    "branch_tax_location" => "",
+    "branch_Permanent_account_number" => "رقم الحساب الدائم",
+    "branch_tax_number" => "الرقم الضريبي",
+    "branch_tax_article" => "المادة الضريبية",
+    "branch_commercial_registration_num" => "رقم السجل التجاري",
+    //Preparing the accounting manual
+    "Preparing the accounting manual" => "اعدادات الدليل المحاسبي",
+    "account type" => "",
+    "type number" => "",
+    "Type name" => "",
+    "foreign name" => "",
+    "affected by operations" => "",
+    //account groups
+    "account groups" => "",
+    "group number" => "",
+    "group name" => "",
+    "foreign name" => "",
+    //Account Classification
+    "number" => "",
+    "Classification name" => "",
+    "foreign name" => "",
+    //Reports type
+    "Reports type" => "",
+    "number" => "",
+    "Type name" => "",
+    "foreign name" => "",
+    "balance sheet" => "الميزانية العمومية",
+    //General notations
+    "General notations" => "الترميزات العامة",
+    "system_general_notations" => "الترميزات العامة للنظام",
+    "to_year" => "",
+    "to_year" => "",
+    "to_year" => "",
+    "to_year" => "",
+    "to_year" => "",
+
+
+
     //country
     //gov
     //district
@@ -28,7 +180,7 @@ return [
     //company-CostCenter_Items
     //company-currency
 
-    //company-ثxpensesItems بنود المصروفات
+    //company-ExpensesItems بنود المصروفات
     //company-expenses
 
     //company-asset

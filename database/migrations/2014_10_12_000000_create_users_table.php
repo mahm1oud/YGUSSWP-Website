@@ -17,6 +17,9 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('user_id');
+            $table->string('employee_num')->index();
+            $table->string('company_num')->index();
+            $table->string('company_branch_num')->index();
             $table->string('email')->unique();
             $table->string('join_date')->unique();
             $table->string('phone_number')->nullable();
@@ -27,11 +30,16 @@ class CreateUsersTable extends Migration
             $table->string('department')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('is_company')->nullable();
+            $table->string('sn')->nullable();
+            $table->integer('close_storage')->nullable();
+            $table->boolean('must_close')->nullable();
+            $table->boolean('current_state')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
     }
-    
+
 
     /**
      * Reverse the migrations.
